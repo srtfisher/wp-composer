@@ -83,6 +83,8 @@ class WpComposer {
 
 			call_user_func_array($callback, array($dir, $data, $is_plugin, $is_theme));
 		endforeach;
+
+		chdir($dir);
 	}
 
 	/**
