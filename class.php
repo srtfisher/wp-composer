@@ -81,7 +81,7 @@ class WpComposer {
 			$is_theme = (is_object($data) AND get_class($data) == 'WP_Theme') ? TRUE : FALSE;
 			$is_plugin = ! $is_theme;
 
-			call_user_func_array($callback, array($dir, $data));
+			call_user_func_array($callback, array($dir, $data, $is_plugin, $is_theme));
 		endforeach;
 	}
 
@@ -110,7 +110,7 @@ class WpComposer {
 			if ($this->shouldUsePath($themes_root.$path))
 				$index[$themes_root.'/'.$path] = $data;
 		endforeach; endif;
-		
+
 		return apply_filters('wp_composer_paths', $index);
 	}
 
