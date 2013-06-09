@@ -1,7 +1,9 @@
 <?php
-
+use Composer\Console\Application;
 require_once(__DIR__.'/class.php');
-WpComposer::boot();
+
+$instance = WpComposer::Instance();
+$instance->boot();
 
 /**
  * Composer Command for WP-CLI
@@ -13,7 +15,11 @@ WpComposer::boot();
 class Composer_Command extends WP_CLI_Command {
 	public function install()
 	{
+		$instance = WpComposer::Instance();
+		$instance->recursiveExecution(function()
+		{
 
+		});
 	}
 
 	public function update()
@@ -23,12 +29,15 @@ class Composer_Command extends WP_CLI_Command {
 
 	public function status()
 	{
-
+		$instance = WpComposer::Instance();
+		return $instance->run();
 	}
+
 
 	public function about()
 	{
-		
+		$instance = WpComposer::Instance();
+		return $instance->run();
 	}
 }
 
