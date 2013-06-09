@@ -80,6 +80,11 @@ class Composer_Command extends WP_CLI_Command {
 		$instance = WpComposer::Instance();
 		return $instance->run();
 	}
+
+	public function version()
+	{
+		WP_CLI::line('wp-composer version: '.WpComposer::$version);
+	}
 }
 
 WP_CLI::add_command('composer', 'Composer_Command');

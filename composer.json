@@ -1,11 +1,11 @@
 {
-  "name": "wordpress/composer",
+  "name": "srtfisher/wp-composer",
   "description": "WP-CLI wrapper for Composer",
   "homepage": "http://wordpress.org/plugins/composer",
   "license": "GPL-2.0",
   "type": "wp-cli",
   "keywords": ["wordpress", "composer", "wp-cli"],
-  
+
   "authors": [
     {
       "name": "Sean Fisher",
