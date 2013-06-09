@@ -1,10 +1,13 @@
 <?php
 /*
 Plugin Name: WordPress Composer
-Version: 0.1-alpha
+Version: 0.1
 Description: Adds Composer support to WordPress and WP-CLI
 Author: Sean Fisher
-Plugin URI: http://wordpress.org/plugins/composer
+Author URI: http://seanfisher.co/
+Plugin URI: http://seanfisher.co/wp-composer/
+Donate link: http://seanfisher.co/donate/
+License: GPLv2 or later
 */
 
 // Not a WP-CLI Request
