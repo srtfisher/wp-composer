@@ -80,7 +80,7 @@ class WpComposer {
 
 			$is_theme = (is_object($data) AND get_class($data) == 'WP_Theme') ? TRUE : FALSE;
 			$is_plugin = ! $is_theme;
-			
+
 			call_user_func_array($callback, array($dir, $data));
 		endforeach;
 	}
@@ -98,7 +98,7 @@ class WpComposer {
 		if (count($plugins) > 0) : foreach($plugins as $path => $data) :
 			$filteredPlugin = $this->filterPlugin($path);
 
-			if ($filteredPlugin !== NULL)
+			if ($filteredPlugin !== NULL AND $this->shouldUsePath($filteredPlugin))
 				$index[$filteredPlugin] = $data;
 		endforeach; endif;
 
@@ -107,9 +107,10 @@ class WpComposer {
 		$themes_root = get_theme_root();
 
 		if (count($themes) > 0) : foreach($themes as $path => $data) :
-			$index[$themes_root.'/'.$path] = $data;
+			if ($this->shouldUsePath($themes_root.$path))
+				$index[$themes_root.'/'.$path] = $data;
 		endforeach; endif;
-
+		
 		return apply_filters('wp_composer_paths', $index);
 	}
 
@@ -129,5 +130,19 @@ class WpComposer {
 			return NULL;
 		else
 			return WP_PLUGIN_DIR.'/'.dirname($plugin);
+	}
+
+	/**
+	 * See if we should include a path if they don't have a composer.json
+	 * 
+	 * @param string
+	 * @return bool
+	 */
+	private function shouldUsePath($path)
+	{
+		if (! file_exists($path.'/composer.json'))
+			return FALSE;
+		else
+			return TRUE;
 	}
 }
