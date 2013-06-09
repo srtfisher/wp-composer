@@ -30,6 +30,15 @@ No, not exactly! Sadly, I'm building this out and I'm trying to make some sweet 
 
 If you'd love to help out, please help! Make a pull request and let's get coding!
 
+### How do I build Composer Management inside of my plugin?
+Simple really! You just create a simple `composer.json` file like you would with any Composer project. From there, wp-composer will interface with each plugin/theme that has composer support and it will generate the autoload files, too!
+
+Just include something like this inside your main plugin file:
+
+`require(__DIR__.'/vendor/autoload.php');`
+
+It's that simple.
+
 == Installation ==
 
 1. Upload `/composer/` to the `/wp-content/plugins/` directory
