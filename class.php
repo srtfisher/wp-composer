@@ -15,7 +15,7 @@ class WpComposer {
 
 	private static $Instance;
 	public static $version = '0.1';
-	
+
 	public static function Instance()
 	{
 		if (self::$Instance == NULL)
@@ -125,7 +125,7 @@ class WpComposer {
 	private function filterPlugin($plugin)
 	{
 		// We don't want to have this function included, the whole system will fail
-		if ($plugin == 'composer/composer.php')
+		if ($plugin == 'composer/composer.php' OR $plugin == 'wp-composer/composer.php')
 			return NULL;
 
 		// They're not in a single file, cannot support them
