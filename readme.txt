@@ -9,7 +9,7 @@ Stable tag: 0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Adding Composer depdendancy management to WP CLI.
+Adding Composer dependency management to WP CLI.
 
 == Description ==
 
@@ -20,7 +20,7 @@ This package uses a great piece of software called [WP-CLI](http://wp-cli.org/).
 It's the greatest thing to happen to the web since GIFs, Drop Shadows and dancing cats. Composer is a dead simple JSON-based dependency manager for PHP. For more information, check out <http://getcomposer.org/>.
 
 ### So this is complete Composer support?
-No, not exactly! Sadly, I'm building this out and I'm trying to make some sweet WP-CLI and Composer intergration. But for now, we only support a few command:
+No, not exactly! Sadly, I'm building this out and I'm trying to make some sweet WP-CLI and Composer integration. But for now, we only support a few command:
 
 - install
 - update
