@@ -22,3 +22,6 @@ If you'd love to help out, please help! Make a pull request and let's get coding
 
 ### Who's behind this little project?
 It's just [Sean Fisher](http://github.com/srtfisher) for now! We love the guys and gals from [WP CLI](https://github.com/wp-cli/wp-cli) too!
+
+### License?
+GPLv2 or later
