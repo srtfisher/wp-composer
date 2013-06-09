@@ -73,12 +73,61 @@ class WpComposer {
 			die('Not a valid callback.');
 
 		$directories = $this->getDirectories();
+		$initialDir = getcwd();
+
+		foreach($directories as $dir => $data) :
+			chdir($dir);
+
+			$is_theme = (is_object($data) AND get_class($data) == 'WP_Theme') ? TRUE : FALSE;
+			$is_plugin = ! $is_theme;
+			
+			call_user_func_array($callback, array($dir, $data));
+		endforeach;
 	}
 
+	/**
+	 * Retrieve the Directories to act upon
+	 * 
+	 * @return array Array of plugins or WP_Theme objects
+	 */
 	private function getDirectories()
 	{
-		$path = WP_PLUGIN_DIR;
-		var_dump($path);
-		exit;
+		$index = array();
+
+		$plugins = apply_filters( 'all_plugins', get_plugins() );
+		if (count($plugins) > 0) : foreach($plugins as $path => $data) :
+			$filteredPlugin = $this->filterPlugin($path);
+
+			if ($filteredPlugin !== NULL)
+				$index[$filteredPlugin] = $data;
+		endforeach; endif;
+
+		// Themes
+		$themes = wp_get_themes();
+		$themes_root = get_theme_root();
+
+		if (count($themes) > 0) : foreach($themes as $path => $data) :
+			$index[$themes_root.'/'.$path] = $data;
+		endforeach; endif;
+
+		return apply_filters('wp_composer_paths', $index);
+	}
+
+	/**
+	 * Internally Filter the plugin's path
+	 *
+	 * @return null|string Null for a plugin not to be included
+	 */
+	private function filterPlugin($plugin)
+	{
+		// We don't want to have this function included, the whole system will fail
+		if ($plugin == 'composer/composer.php')
+			return NULL;
+
+		// They're not in a single file, cannot support them
+		if (dirname(WP_PLUGIN_DIR.'/'.$plugin) == WP_PLUGIN_DIR)
+			return NULL;
+		else
+			return WP_PLUGIN_DIR.'/'.dirname($plugin);
 	}
 }
