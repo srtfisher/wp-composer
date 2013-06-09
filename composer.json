@@ -1,0 +1,20 @@
+{
+  "name": "wordpress/composer",
+  "description": "WP-CLI wrapper for Composer",
+  "homepage": "http://wordpress.org/plugins/composer",
+  "license": "GPL-2.0",
+  "type": "wp-cli",
+  "authors": [
+    {
+      "name": "Sean Fisher",
+      "homepage": "http://seanfisher.co"
+    }
+  ],
+  "require": {
+    "composer/composer": "1.0.*@alpha"
+  },
+  "minimum-stability": "dev",
+  "config": {
+      "preferred-install": "dist"
+  }
+}
