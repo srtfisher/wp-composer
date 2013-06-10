@@ -2,7 +2,7 @@
 Contributors: sean212
 Donate link: http://seanfisher.co/donate
 Link: http://seanfisher.co/wp-composer
-Tags: composer, php, dependency
+Tags: composer, php, dependency, wp-cli, command line, assets, packagist
 Requires at least: 3.3
 Tested up to: 3.5.1
 Stable tag: 0.1
