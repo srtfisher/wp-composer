@@ -5,6 +5,9 @@
   "license": "GPL-2.0",
   "type": "wp-cli",
   "keywords": ["wordpress", "composer", "wp-cli"],
+  "provide": {
+    "wp-composer": "*"
+  },
 
   "authors": [
     {
