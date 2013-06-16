@@ -107,7 +107,7 @@ class WpComposer {
 
 		// Themes
 		$themes = wp_get_themes();
-		$themes_root = get_theme_root();
+		$themes_root = get_theme_root().'/';
 
 		if (count($themes) > 0) : foreach($themes as $path => $data) :
 			if ($this->shouldUsePath($themes_root.$path))
