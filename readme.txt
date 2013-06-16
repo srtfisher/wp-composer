@@ -13,6 +13,8 @@ Adding Composer dependency management to WP CLI.
 
 == Description ==
 
+Adding Composer dependency management to WP CLI. Allows you to recursivly install/update composer packages inside of all of your WordPress plugins and themes.
+
 ### What is this using?
 This package uses a great piece of software called [WP-CLI](http://wp-cli.org/). It provides a command line interface for WordPress management. We are a plugin providing Composer management inside of WP CLI.
 
@@ -60,3 +62,7 @@ It's the greatest thing to happen to the web since GIFs, Drop Shadows and dancin
 = 0.1 =
 * Initial Release
 * Provides support for install/update/help/diagnose/status/about
+
+= 0.2 =
+* Bug fixes
+* Better documentation

@@ -1,7 +1,7 @@
 WordPress Composer
 =============
 
-Adding Composer dependency management to WP CLI.
+Adding Composer dependency management to WP CLI. Allows you to recursivly install/update composer packages inside of all of your WordPress plugins and themes.
 
 ### What is this using?
 This package uses a great piece of software called [WP-CLI](http://wp-cli.org/). It provides a command line interface for WordPress management. We are a plugin providing Composer management inside of WP CLI.
@@ -25,7 +25,12 @@ Simple really! You just create a simple `composer.json` file like you would with
 
 Just include something like this inside your main plugin file:
 
-`require(__DIR__.'/vendor/autoload.php');`
+```php
+<?php
+// Start the plugin...
+require(__DIR__.'/vendor/autoload.php');
+?>
+```
 
 It's that simple.
 
@@ -43,3 +48,35 @@ After you install it, try running `wp composer` and you should get a great inter
 
 ### License?
 GPLv2 or later
+
+## Change Log
+* **0.1:** Initial Commit
+* **0.1.1:** Bug fix and adding better documentation
+
+## How to install?
+Pulling the ZIP from GitHub **will not work** on its own! You have to also setup the composer dependencies from this plugin for it to work. But luckily, there are other ways to skip this.
+
+### Using WP-CLI
+We love WP-CLI and it's amazingly easy to install and activate the plugin with one command. From inside of your WordPress directory, run this command:
+
+```bash
+wp plugin install composer --activate
+```
+
+### Using WordPress Packagist
+We highly reccomend using <http://wpackagist.org/> to install this plugin. We love it and the guys and gals over at [Outlandish Ideas](http://outlandishideas.co.uk/) cannot be thanked enough.
+
+After setting up the new respository, you can add this to your `composer.json`:
+
+```json
+{
+	"require": {
+		"wpackagist/composer": *
+	}
+}
+```
+
+Afterwards, you will of course have to activate the plugin.
+
+### Downloading the WordPress plugin
+I've added this package to the WordPress.org plugin listing for you to easily download it inside of WordPress Admin! When you download it from WordPress.org or from inside of your WordPress Admin, it will already be good to go and you don't have to install the plugin at all. All that is needed is for you to activate the `WordPress Composer` plugin.
