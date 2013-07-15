@@ -16,7 +16,8 @@
     }
   ],
   "require": {
-    "composer/composer": "1.0.*@alpha"
+    "composer/composer": "1.0.*@alpha",
+    "php": ">=5.3.2"
   },
   "minimum-stability": "dev",
   "config": {
