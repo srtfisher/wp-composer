@@ -51,7 +51,7 @@ GPLv2 or later
 
 ## Change Log
 * **0.1:** Initial Commit
-* **0.1.1:** Bug fix and adding better documentation
+* **0.1.1 and 0.1.2:** Bug fix and adding better documentation
 
 ## How to install?
 Pulling the ZIP from GitHub **will not work** on its own! You have to also setup the composer dependencies from this plugin for it to work. But luckily, there are other ways to skip this.

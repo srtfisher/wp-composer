@@ -63,6 +63,6 @@ It's the greatest thing to happen to the web since GIFs, Drop Shadows and dancin
 * Initial Release
 * Provides support for install/update/help/diagnose/status/about
 
-= 0.2 =
+= 0.1.1 and 0.1.2 =
 * Bug fixes
 * Better documentation

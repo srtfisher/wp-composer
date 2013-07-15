@@ -14,7 +14,7 @@ class WpComposer {
 	private $backupArgv;
 
 	private static $Instance;
-	public static $version = '0.1.1';
+	public static $version = '0.1.2';
 
 	public static function Instance()
 	{

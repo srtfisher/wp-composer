@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WordPress Composer
-Version: 0.1.1
+Version: 0.1.2
 Description: Adds Composer support to WordPress and WP-CLI
 Author: Sean Fisher
 Author URI: http://seanfisher.co/
