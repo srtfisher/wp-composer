@@ -71,7 +71,7 @@ After setting up the new respository, you can add this to your `composer.json`:
 ```json
 {
 	"require": {
-		"wpackagist/composer": *
+		"wpackagist/composer": "*"
 	}
 }
 ```
